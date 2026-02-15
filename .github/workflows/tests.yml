@@ -3,10 +3,10 @@ name: E2E Tests
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "develop" ] #dispara quando te, push no main
   pull_request:
-    branches: [ "develop" ]
-  workflow_dispatch:
+    branches: [ "develop" ] #dispara quando te, pull no main
+  workflow_dispatch:  #permite o disparo manual sem ter que fazer alterações no main
 
 jobs:
   chrome:
@@ -73,9 +73,9 @@ jobs:
       with:
         python-version:  3.12
 
-    - name:  Install Deps
+    - name:  Install Deps #Instalação Robot
       run:  |
-        python -m pip install --upgrade pip #Instalação Robot
+        python -m pip install --upgrade pip   
         pip install -r requirements.txt
 
     - name:  Browser Init #Instalação Browsers Chrome, Mozilla e WebKit
