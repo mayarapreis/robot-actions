@@ -51,7 +51,7 @@ jobs:
       uses: actions/upload-artifact@v6.0.0  #Mostrar os logs do Robot para baixar nos Artifacts
       if: always()
       with:
-        name: Test report
+        name: Chromium Test report
         path: logs
 
    
@@ -96,5 +96,5 @@ jobs:
       uses: actions/upload-artifact@v6.0.0  #Mostrar os logs do Robot para baixar nos Artifacts
       if: always()
       with:
-        name: Test report
+        name: Firefox Test report
         path: logs
