@@ -17,37 +17,37 @@ jobs:
 
     steps:
     - name: Get code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4 #Instalação Git
 
     - name: Use Node.js 25
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v4 #Instalação Node
       with:
         node-version: 25
 
     - name: Setup Python
-      uses: actions/setup-python@v6.2.0
+      uses: actions/setup-python@v6.2.0 #Instalação Python
       with:
         python-version:  3.12
 
     - name:  Install Deps
       run:  |
-        python -m pip install --upgrade pip
+        python -m pip install --upgrade pip #Instalação Robot
         pip install -r requirements.txt
 
-    - name:  Browser Init
+    - name:  Browser Init #Instalação Browsers Chrome, Mozilla e WebKit
       run:  rfbrowser init
 
     - name:  Run E2E Tests
-      run:  robot -d ./logs -i smoke tests
+      run:  robot -d ./logs -i tests  #Execução dos testes
 
     - name: Robot Reporter
-      uses: joonvena/robotframework-reporter-action@v2.4
+      uses: joonvena/robotframework-reporter-action@v2.4  #Mostrar resultado dos testes no Tests summary
       with:
         gh_access_token: ${{secrets.GITHUB_TOKEN}}
         report_path: logs
 
     - name: Upload Report
-      uses: actions/upload-artifact@v6.0.0
+      uses: actions/upload-artifact@v6.0.0  #Mostrar os logs do Robot para baixar nos Artifacts
       with:
         name: Test report
         path: logs
