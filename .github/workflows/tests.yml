@@ -38,7 +38,7 @@ jobs:
       run:  rfbrowser init
 
     - name:  Run E2E Tests
-      run:  robot -d ./logs -i tests  #Execução dos testes
+      run:  robot -d ./logs tests  #Execução dos testes
 
     - name: Robot Reporter
       uses: joonvena/robotframework-reporter-action@v2.4  #Mostrar resultado dos testes no Tests summary
