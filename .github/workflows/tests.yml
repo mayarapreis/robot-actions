@@ -3,9 +3,9 @@ name: E2E Tests
 
 on:
   push:
-    branches: [ "develop" ] #dispara quando te, push no main
+    branches: [ "main" ] #dispara quando te, push no main
   pull_request:
-    branches: [ "develop" ] #dispara quando te, pull no main
+    branches: [ "main" ] #dispara quando te, pull no main
   workflow_dispatch:  #permite o disparo manual sem ter que fazer alterações no main
 
 jobs:
